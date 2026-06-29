@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.env.local
+node_modules/
+.next/
+*.log
+dist/
+.DS_Store
+venv/
+.venv/
+app/skills/generated/*.py
+!app/skills/generated/registry.json

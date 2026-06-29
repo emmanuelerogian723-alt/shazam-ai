@@ -6,15 +6,15 @@ pydantic-settings==2.6.1
 python-multipart==0.0.20
 
 # ── AI Providers ───────────────────────────────────────────────────────────────
-groq==0.12.0               # Groq: llama-3.3-70b, whisper, playai-tts (FREE tier)
+groq==0.12.0               # Groq: llama-3.3-70b, whisper-large-v3-turbo, playai-tts (FREE)
 openai==1.57.0             # OpenAI + OpenRouter (same SDK)
 anthropic==0.40.0          # Anthropic Claude
-httpx==0.28.1              # Async HTTP (Pollinations, HuggingFace, Serper)
+httpx==0.28.1              # Async HTTP (Pollinations FREE, HuggingFace, Serper)
 
 # ── Database ───────────────────────────────────────────────────────────────────
 sqlalchemy[asyncio]==2.0.36
-asyncpg==0.30.0            # PostgreSQL async driver
-alembic==1.14.0            # DB migrations
+asyncpg==0.30.0
+alembic==1.14.0
 
 # ── Cache ──────────────────────────────────────────────────────────────────────
 redis[asyncio]==5.2.1
@@ -25,25 +25,34 @@ qdrant-client==1.12.1
 # ── Auth / Security ────────────────────────────────────────────────────────────
 pyjwt==2.10.1
 bcrypt==4.2.1
-slowapi==0.1.9             # Rate limiting
+slowapi==0.1.9
+
+# ── Image Processing (ALL FREE / Open Source) ──────────────────────────────────
+Pillow==11.0.0             # Image editing, filters, text overlay
+rembg==2.0.57              # Background removal (U2Net open source model)
+onnxruntime==1.19.2        # Required by rembg
+
+# ── Video Processing (ALL FREE / Open Source) ──────────────────────────────────
+moviepy==2.1.1             # Video editing, slideshow, transitions
+ffmpeg-python==0.2.0       # FFmpeg Python bindings
 
 # ── Document Processing ────────────────────────────────────────────────────────
-pypdf==5.1.0               # PDF parsing
-python-docx==1.1.2         # DOCX parsing
+pypdf==5.1.0
+python-docx==1.1.2
 
 # ── Telegram ──────────────────────────────────────────────────────────────────
 python-telegram-bot==21.9
 
-# ── Logging / Observability ────────────────────────────────────────────────────
+# ── Logging ────────────────────────────────────────────────────────────────────
 structlog==24.4.0
 python-json-logger==3.2.0
 
 # ── Utils ──────────────────────────────────────────────────────────────────────
 python-dotenv==1.0.1
 aiofiles==24.1.0
+numpy==1.26.4
 
 # ── Testing ────────────────────────────────────────────────────────────────────
 pytest==8.3.4
 pytest-asyncio==0.24.0
 pytest-cov==6.0.0
-httpx==0.28.1              # test client
